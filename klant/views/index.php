@@ -11,6 +11,11 @@ session_start();
 // Bepaal welke pagina wordt opgevraagd (default: home)
 $page = isset($_GET['page']) ? $_GET['page'] : 'home';
 
+if (!isset($_SESSION['login']) || $_SESSION['ingelogdAls'] !== 'STUDENT') {
+    header('Location: ../../index.php?page=login');
+    exit;
+}
+
 // Routing voor de verschillende pagina's
 switch ($page) {
     case 'producten':

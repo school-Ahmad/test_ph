@@ -8,16 +8,12 @@
     <h1>Inloggen</h1>
 
     <?php if (!empty($error)): ?>
-        <p style="color: red"><?= htmlspecialchars($error) ?></p>
+        <p style="color:red"><?= htmlspecialchars($error) ?></p>
     <?php endif; ?>
 
     <form method="POST">
-        <label for="username">Gebruikersnaam:</label><br>
-        <input type="text" name="username" required><br><br>
-
-        <label for="password">Wachtwoord:</label><br>
-        <input type="password" name="password" required><br><br>
-
+        <input type="text" name="gebruikersnaam" placeholder="Gebruikersnaam" required><br>
+        <input type="password" name="wachtwoord" placeholder="Wachtwoord" required><br>
         <button type="submit">Inloggen</button>
     </form>
 </body>
