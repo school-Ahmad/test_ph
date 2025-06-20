@@ -12,8 +12,8 @@
     <?php endif; ?>
 
     <form method="POST">
-        <input type="text" name="gebruikersnaam" placeholder="Gebruikersnaam" required><br>
-        <input type="password" name="wachtwoord" placeholder="Wachtwoord" required><br>
+        <input type="text" name="username" placeholder="Gebruikersnaam" required><br>
+        <input type="password" name="password" placeholder="Wachtwoord" required><br>
         <button type="submit">Inloggen</button>
     </form>
 </body>

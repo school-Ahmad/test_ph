@@ -1,11 +1,11 @@
 <?php
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $gebruikersnaam = $_POST['gebruikersnaam'] ?? '';
-    $wachtwoord = $_POST['wachtwoord'] ?? '';
+    $username = $_POST['username'] ?? '';
+    $password = $_POST['password'] ?? '';
 
     $postData = http_build_query([
-        'username' => $gebruikersnaam,
-        'password' => $wachtwoord
+        'username' => $username,
+        'password' => $password
     ]);
 
     $context = stream_context_create([
@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // Zet sessie
             $_SESSION['login'] = true;
             $_SESSION['ingelogdAls'] = $data['session']['ingelogdAls'] ?? null;
-            $_SESSION['gebruikersnaam'] = $gebruikersnaam;
+            $_SESSION['username'] = $username;
             $_SESSION['mail'] = $data['session']['mail'] ?? '';
 
             // Doorsturen op basis van rol
