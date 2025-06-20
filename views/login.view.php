@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-A">
     <title>Inloggen</title>
 </head>
 <body>
@@ -33,8 +33,10 @@
 
         let data;
         try {
+            // Lees de body maar één keer als JSON
             data = await res.json();
         } catch (err) {
+            console.log(err);
             document.getElementById('error').textContent = 'Server gaf geen geldige JSON terug.';
             return;
         }
