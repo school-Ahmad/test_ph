@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-    <meta charset="UTF-A">
+    <meta charset="UTF-8">
     <title>Inloggen</title>
 </head>
 <body>
@@ -33,7 +33,9 @@
 
         let data;
         try {
-            // Lees de body maar één keer als JSON
+            console.log(res);
+            const raw = await res.text();
+            console.log(raw);
             data = await res.json();
         } catch (err) {
             console.log(err);
