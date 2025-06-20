@@ -1,11 +1,11 @@
 <?php
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $gebruikersnaam = $_POST['gebruikersnaam'] ?? '';
-    $wachtwoord = $_POST['wachtwoord'] ?? '';
+    $username = $_POST['username'] ?? '';
+    $password = $_POST['password'] ?? '';
 
     $postData = http_build_query([
-        'username' => $gebruikersnaam,
-        'password' => $wachtwoord
+        'username' => $username,
+        'password' => $password
     ]);
 
     $opts = [
