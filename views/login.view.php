@@ -33,10 +33,8 @@
 
         let data;
         try {
-            console.log(res);
-            const raw = await res.text();
-            console.log(raw);
             data = await res.json();
+            console.log(data);
         } catch (err) {
             console.log(err);
             document.getElementById('error').textContent = 'Server gaf geen geldige JSON terug.';
