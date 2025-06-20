@@ -4,8 +4,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $wachtwoord = $_POST['wachtwoord'] ?? '';
 
     $postData = http_build_query([
-        'gebruikersnaam' => $gebruikersnaam,
-        'wachtwoord' => $wachtwoord
+        'username' => $gebruikersnaam,
+        'password' => $wachtwoord
     ]);
 
     $opts = [
