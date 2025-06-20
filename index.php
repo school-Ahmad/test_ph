@@ -38,3 +38,7 @@ switch ($page) {
         session_destroy();
         header('Location: index.php?page=login');
         exit;
+    default:
+        require_once './logic/dashboard.logic.php';
+        break;
+}
