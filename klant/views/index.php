@@ -7,10 +7,6 @@ ini_set('display_errors', 1);
 
 session_start();
 
-
-// Bepaal welke pagina wordt opgevraagd (default: home)
-$page = isset($_GET['page']) ? $_GET['page'] : 'home';
-
 if (!isset($_SESSION['login']) || $_SESSION['ingelogdAls'] !== 'STUDENT') {
     header('Location: ../../index.php?page=login');
     exit;

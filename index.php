@@ -4,20 +4,20 @@ ini_set('display_errors', 1);
 session_start();
 
 $page = $_GET['page'] ?? 'dashboard';
+
+$publicPages = ['login', 'logout', 'set-session'];
 $ingelogdAls = $_SESSION['ingelogdAls'] ?? null;
 
-$publicPages = ['login', 'logout'];
-
-// Niet ingelogd → naar login
+// Niet ingelogd? Alleen login/set-session toegestaan
 if (!isset($_SESSION['login']) && !in_array($page, $publicPages)) {
     header('Location: index.php?page=login');
     exit;
 }
 
-// Studenten mogen niet naar dashboard/producten/add_item
+// Studenten mogen geen toegang tot deze pagina's
 $studentRestricted = ['dashboard', 'producten', 'add_item'];
 if ($ingelogdAls === 'STUDENT' && in_array($page, $studentRestricted)) {
-    header('Location: ../klant/views/index.php'); // geforceerde redirect als check
+    header('Location: ../klant/views/index.php');
     exit;
 }
 
@@ -33,6 +33,9 @@ switch ($page) {
         break;
     case 'login':
         require_once './logic/login.logic.php';
+        break;
+    case 'set-session':
+        require_once './logic/set-session.logic.php';
         break;
     case 'logout':
         session_destroy();
